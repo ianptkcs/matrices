@@ -1,27 +1,27 @@
-# Produto de Matrizes - Menor Caminho
+# Matrix Product - Shortest Path
 
-## Descrição do Projeto
+## Project Description
 
-Este projeto é um programa em C que resolve o problema de multiplicação de matrizes de forma otimizada. Através de uma análise dos índices das matrizes, o programa encontra a ordem ideal para realizar a multiplicação com o menor número possível de produtos escalares. O algoritmo recursivo utiliza a estratégia de divisão e conquista, mantendo o registro de quais índices das matrizes são eliminados em cada etapa da multiplicação.
+This project is a C program that solves the matrix multiplication problem in an optimized way. Through an analysis of matrix indices, the program finds the ideal order to perform the multiplication with the least possible number of scalar products. The recursive algorithm uses a divide-and-conquer strategy, keeping track of which matrix indices are eliminated at each stage of multiplication.
 
-### Funcionalidades Principais
+### Main Features
 
--   **Leitura de arquivo de entrada**: O programa lê as dimensões das matrizes a partir de um arquivo de entrada.
--   **Cálculo do menor caminho**: O algoritmo encontra o menor caminho para multiplicar as matrizes, minimizando o número de operações.
--   **Visualização do caminho**: O programa gera uma matriz de saída que visualiza o caminho de eliminação dos índices durante a multiplicação.
--   **Saída formatada**: Gera um arquivo de saída que exibe o número total de produtos escalares e o melhor caminho de multiplicação.
+-   **Input file reading**: The program reads matrix dimensions from an input file.
+-   **Shortest path calculation**: The algorithm finds the shortest path to multiply the matrices, minimizing the number of operations.
+-   **Path visualization**: The program generates an output matrix that visualizes the path of index elimination during multiplication.
+-   **Formatted output**: Generates an output file that displays the total number of scalar products and the best multiplication path.
 
-## Arquivos
+## Files
 
-### Estrutura de Arquivos
+### File Structure
 
--   `produto_matrizes.c`: Arquivo principal que contém o código-fonte do projeto.
--   `entrada2.txt`: Arquivo de entrada com as dimensões das matrizes.
--   `saida2.txt`: Arquivo de saída com o resultado final, incluindo o número de produtos escalares e o caminho percorrido.
+-   `produto_matrizes.cpp`: Main file containing the project's source code.
+-   `entrada2.txt`: Input file containing the matrix dimensions.
+-   `saida2.txt`: Output file with the final result, including the number of scalar products and the path taken.
 
-### Entrada
+### Input
 
-O arquivo `entrada2.txt` deve seguir o seguinte formato:
+The file `entrada2.txt` should follow the following template:
 
 ```
 Bla bla bla
@@ -38,9 +38,9 @@ c  d
 d  e
 ```
 
-### Saída
+### Output
 
-O arquivo `saida2.txt` conterá o seguinte formato:
+The file `saida2.txt` will follow this template:
 
 ```
 Total de multiplicacoes escalares = total
@@ -53,70 +53,70 @@ Melhor ordem para realizar o produto:
  a- c x  d
 ```
 
-## Como Executar o Projeto
+## How to Run the Project
 
-### Pré-requisitos
+### Prerequisites
 
--   Compilador C (como `gcc`)
--   Visual Studio Code ou qualquer editor de texto compatível com C
--   Sistema Operacional: Windows, macOS ou Linux
+-   C compiler (such as `gcc`)
+-   Visual Studio Code or any text editor compatible with C
+-   Operating System: Windows, macOS, or Linux
 
-### Compilação e Execução
+### Compilation and Execution
 
-1. Abra o terminal/console no diretório do projeto.
-2. Compile o programa com o comando:
+1. Open the terminal/console in the project directory.
+2. Compile the program with the command:
 
     ```bash
     gcc -o produto_matrizes produto_matrizes.c
     ```
 
-3. Após a compilação, execute o programa com o comando:
+3. After compilation, run the program with the command:
 
     ```bash
     ./produto_matrizes
     ```
 
-4. O programa irá processar o arquivo `entrada2.txt` e gerar o resultado no arquivo `saida2.txt`.
+4. The program will process the `entrada2.txt` file and generate the result in the `saida2.txt` file.
 
-## Estrutura do Código
+## Code Structure
 
-O código foi dividido em várias funções para melhor organização e modularização:
+The code has been divided into several functions for better organization and modularization:
 
--   **`produtos_escalares()`**: Calcula o número de produtos escalares em uma multiplicação de duas matrizes.
--   **`atualizar_indices_temporarios()`**: Atualiza os índices temporários após eliminar um índice durante o cálculo.
--   **`achar_menor_caminho()`**: Função recursiva principal que encontra o menor caminho de multiplicação, minimizando o número de produtos escalares.
--   **`inicializar_duplas()`**: Lê os dados de entrada e inicializa o array de dimensões das matrizes.
--   **`imprimir_resultado()`**: Formata e escreve o resultado final no arquivo de saída.
--   **`ler_entrada()`**: Lê a quantidade de matrizes do arquivo de entrada.
--   **`criar_matriz_caminho()`**: Cria uma matriz de visualização para o caminho de multiplicação.
--   **`lidar_com_intervalos()`**: Trata os intervalos de multiplicação ao longo do processo.
--   **`liberar_memoria()`**: Libera a memória alocada durante a execução do programa.
+-   **`produtos_escalares()`**: Calculates the number of scalar products in a multiplication of two matrices.
+-   **`atualizar_indices_temporarios()`**: Updates temporary indices after eliminating an index during calculation.
+-   **`achar_menor_caminho()`**: Main recursive function that finds the shortest multiplication path, minimizing the number of scalar products.
+-   **`inicializar_duplas()`**: Reads input data and initializes the array of matrix dimensions.
+-   **`imprimir_resultado()`**: Formats and writes the final result to the output file.
+-   **`ler_entrada()`**: Reads the number of matrices from the input file.
+-   **`criar_matriz_caminho()`**: Creates a visualization matrix for the multiplication path.
+-   **`lidar_com_intervalos()`**: Handles multiplication intervals throughout the process.
+-   **`liberar_memoria()`**: Frees the memory allocated during program execution.
 
-## Considerações
+## Considerations
 
-### Complexidade
+### Complexity
 
-O programa utiliza um algoritmo recursivo para resolver o problema da multiplicação de matrizes, o que resulta em uma complexidade de tempo exponencial em termos de _`O(n!)`_, onde _`n`_ é o número de matrizes. No entanto, a abordagem _Dividir para Conquistar_ ajuda a minimizar o número de operações ao encontrar o melhor caminho.
+The program uses a recursive algorithm to solve the matrix multiplication problem, resulting in an exponential time complexity in terms of _`O(n!)`_, where _`n`_ is the number of matrices. However, the _Divide and Conquer_ approach helps minimize the number of operations by finding the best path.
 
-### Melhorias Possíveis
+### Possible Improvements
 
--   **Uso de Programação Dinâmica**: Implementar uma abordagem de programação dinâmica para melhorar a eficiência do cálculo.
--   **Otimização de Memória**: Reduzir a quantidade de memória alocada dinamicamente para as operações temporárias.
+-   **Use of Dynamic Programming**: Implement a dynamic programming approach to improve calculation efficiency.
+-   **Memory Optimization**: Reduce the amount of dynamically allocated memory for temporary operations.
 
-## Contribuição
+## Contribution
 
-Sinta-se à vontade para fazer melhorias ou reportar erros. Para isso:
+Feel free to make improvements or report errors. To do so:
 
-1. Faça um fork do projeto.
-2. Crie um branch para a nova funcionalidade: `git checkout -b feature/nova-funcionalidade`.
-3. Commit suas mudanças: `git commit -m 'Adiciona nova funcionalidade'`.
-4. Envie para o branch principal: `git push origin feature/nova-funcionalidade`.
-5. Abra um Pull Request.
+1. Fork the project.
+2. Create a branch for the new feature: `git checkout -b feature/new-feature`.
+3. Commit your changes: `git commit -m 'Add new feature'`.
+4. Push to the main branch: `git push origin feature/new-feature`.
+5. Open a Pull Request.
 
-## Autor
+## Author
 
 -   **Ian Patrick da Costa Soares**
 
-## Licença
+## License
 
-Este projeto está licenciado sob os termos da [MIT License](LICENSE).
+This project is licensed under the terms of the [MIT License](LICENSE).
